@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+.youi-xmenu{
+	position:absolute;
+	border:1px solid silver;
+	min-width:200px;
+	min-height:20px;
+	left:0;
+	top:0;
+	z-index:9999;
+	background:white;
+	border-radius:5px;
+	padding-left:2px;
+}
+
+.youi-xmenu li.xmenu-item{
+	display:none;
+}
+
+.youi-xmenu li.xmenu-item a{
+	padding-left:5px;
+}
+
+.youi-xmenu .glyphicon{
+	top:0px;
+	margin-right:2px;
+	font-family: 'Glyphicons Halflings','FontAwesome';
+}
+
+.youi-xmenu .glyphicon.fontawesome-empty{
+	padding-left:13px;
+}
+
+.youi-xmenu .glyphicon.fontawesome-remove:before{
+	content: "\f00d";
+	color:red;
+}
+
+.youi-xmenu .glyphicon.fontawesome-undo:before{
+	content: "\f0e2";
+}
+
+.youi-xmenu .glyphicon.fontawesome-redo:before{
+	content: "\f01e";
+}
+
+
+.youi-xmenu .glyphicon.fontawesome-properties:before{
+	content:"\f00b";
+}

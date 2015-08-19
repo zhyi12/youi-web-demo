@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+div.youi-toolbar{
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+.youi-toolbar .btn-group-sm > .btn{
+	padding-left:8px;
+	padding-right:8px;
+}
+
+.youi-toolbar .youi-icon:before{content: "\e065";font-family: 'Glyphicons Halflings','FontAwesome';}
+
+.youi-toolbar .youi-icon.save:before{content: "\f0c7";}
+.youi-toolbar.dirty .youi-icon.save:before{content: "\e175";color:lightgreen;}
+.youi-toolbar .youi-icon.open:before{content: "\e118";}
+.youi-toolbar .youi-icon.viewSource:before{content: "\e022";}
+.youi-toolbar .youi-icon.run:before{content: "\e072";color:green;}
+
+.youi-toolbar .youi-icon.image:before{content: "\f03e";}
+
+

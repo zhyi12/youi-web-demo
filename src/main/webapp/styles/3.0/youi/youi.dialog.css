@@ -1,0 +1,116 @@
+@CHARSET "UTF-8";
+.youi-dialog-container{
+	display:none;
+	position: absolute; 
+}
+
+.youi-dialog-container.popover{
+	max-width: 1200px;
+}
+
+.youi-dialog{
+	display:none;
+	position: relative; 
+	padding: 1px; 
+}
+
+.youi-form.youi-dialog{
+	margin:0;
+}
+
+.dragging-dialog-helper{
+	position: absolute;
+	z-index:9999;
+	border:1px dotted #000;
+	display:none;
+}
+.dragging-dialog-helper.youi-dragging{
+	display:block;
+	cursor:move;
+}
+/**
+* 头
+*/
+.youi-dialog-container .youi-dialog-titlebar{
+	height:28px;
+	padding:0px 0px 0px 6px;
+	cursor:move;
+}
+
+.youi-dialog-container .youi-dialog-titlebar div{
+	padding-right:6px;
+	height:28px;
+}
+
+.youi-dialog-container .youi-dialog-titlebar div div{
+	line-height:16px;
+	padding:3px 0px 0px;
+	vertical-align:middle;
+}
+
+.youi-dialog-container .youi-dialog-titlebar div div a{
+	height:14px;
+	padding:1px;
+}
+
+.youi-dialog-container .youi-dialog-titlebar .youi-dialog-titlebar-close{
+	position: absolute;
+	top:5px;
+	right:6px;
+	height:18px;
+	width:18px;
+	cursor:pointer;
+	
+	font-size:14px;
+}
+
+.youi-dialog-container .youi-dialog-titlebar .youi-dialog-titlebar-close.over{
+}
+/**
+* 内容
+*/
+.youi-dialog-container .youi-dialog-content{
+	zoom: 1;
+	position:relative;
+	overflow-x:hidden;
+}
+
+.youi-dialog-container .youi-dialog-ml {
+	padding-left: 6px;
+	zoom: 1;
+}
+
+.youi-dialog-container .youi-dialog-mr {
+	padding-right: 6px;
+	zoom: 1;
+}
+/**
+* 底部
+*/
+.youi-dialog-container .youi-dialog-buttonpane{
+	height:1px;
+	background-color:
+}
+
+.youi-dialog-container .youi-dialog-buttonpane.buttons{
+	height:36px;
+	padding:3px 10px;
+}
+
+.youi-dialog-container .youi-dialog-buttonpane.buttons .btn-default{
+	margin-left:2px;
+}
+
+/* Overlays */
+.ui-widget-overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	background: #aaaaaa/*{bgColorOverlay}*/ url(images/ui-bg_flat_0_aaaaaa_40x100.png)/*{bgImgUrlOverlay}*/ 50%/*{bgOverlayXPos}*/ 50%/*{bgOverlayYPos}*/ repeat-x/*{bgOverlayRepeat}*/;
+	opacity: .3;
+	filter:Alpha(Opacity=30)/*{opacityOverlay}*/; 
+}
+
+body.dialog-open{
+	overflow:hidden;
+}

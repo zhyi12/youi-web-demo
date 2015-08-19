@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+.youi-reportviewer{
+	position:relative;
+}
+
+.youi-reportviewer .reportviewer-content{
+	min-height:300px;
+}
+
+.youi-reportviewer .reportviewer-buttons{
+  border-bottom: 1px solid #ddd;
+  background: #fafafa;
+}
+
+.youi-reportviewer .report-loading{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	z-index:1;
+}
+
+.youi-reportviewer table td,
+.youi-reportviewer table th{
+	
+	border:1px solid silver;
+}

@@ -1,0 +1,158 @@
+@CHARSET "UTF-8";
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../../fonts/fontawesome-webfont.eot?v=3.2.1');
+  src: url('../../fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), url('../../fonts/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('../../fonts/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), url('../../fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+	font-family:"Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+	overflow:hidden;
+}
+
+.youi-widget-focus{
+	position:absolute;
+	font-size:0px;
+	height:1px;
+}
+
+.popover.youi-popover{
+	max-width:1400px;
+}
+
+.youi-panel .panel-heading{
+	padding:5px;
+}
+
+.youi-panel .panel-content{
+	padding:1px;
+}
+
+.youi-bg{
+	background: #efeff0;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #efeff0), color-stop(1, #fafafa));
+	background: -ms-linear-gradient(bottom, #efeff0, #fafafa);
+	background: -moz-linear-gradient(center bottom, #efeff0 0%, #fafafa 100%);
+	background: -o-linear-gradient(bottom, #efeff0, #fafafa);
+	filter: progid:dximagetransform.microsoft.gradient(startColorStr='#e3e3e3', EndColorStr='#ffffff');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa',EndColorStr='#efeff0')";
+}
+
+.youi-bgcolor{
+	background:#fafafa;
+}
+
+/**editor*/
+
+.youi-editor-container{
+	position:absolute;
+	z-index:8000;
+	min-height:28px;
+	padding:0px;
+}
+
+/*"\e089"  "\e090"*/
+.drop-helper{
+	border:1px dotted silver;
+	z-index:10;
+	background:white;
+}
+.drop-helper.drop-yes .youi-icon.drop{
+	color:green;
+}
+.drop-helper .youi-icon.drop{
+	top:6px;
+	color:red;
+}
+
+.drop-helper .youi-icon.drop:before{content:"\e090";}
+.drop-helper.drop-yes .youi-icon.drop:before{content:"\e089";}
+
+.drop-helper.resizing{
+	opacity:0.8;
+}
+
+.drop-helper.resizing .youi-icon{
+	color:white;
+}
+
+/** jquery ui menu **/
+.ui-menu {
+	list-style: none;
+	padding: 2px;
+	margin: 0;
+	display: block;
+	outline: none;
+}
+.ui-menu .ui-menu {
+	margin-top: -3px;
+	position: absolute;
+}
+.ui-menu .ui-menu-item {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.ui-menu .ui-menu-divider {
+	margin: 5px -2px 5px -2px;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	border-width: 1px 0 0 0;
+}
+.ui-menu .ui-menu-item a {
+	text-decoration: none;
+	display: block;
+	padding: 2px .4em;
+	line-height: 1.2;
+	min-height: 0; /* support: IE7 */
+	font-weight: normal;
+}
+.ui-menu .ui-menu-item a.ui-state-focus,
+.ui-menu .ui-menu-item a.ui-state-active {
+	font-weight: normal;
+	margin: -1px;
+}
+
+.ui-menu .ui-state-disabled {
+	font-weight: normal;
+	margin: .4em 0 .2em;
+	line-height: 1.5;
+}
+.ui-menu .ui-state-disabled a {
+	cursor: default;
+}
+
+/* icon support */
+.ui-menu-icons {
+	position: relative;
+}
+.ui-menu-icons .ui-menu-item a {
+	position: relative;
+	padding-left: 2em;
+}
+
+/* left-aligned */
+.ui-menu .ui-icon {
+	position: absolute;
+	top: .2em;
+	left: .2em;
+}
+
+/* right-aligned */
+.ui-menu .ui-menu-icon {
+	position: static;
+	float: right;
+}
+
+/** jquery ui autocomplete **/
+.ui-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+}
+

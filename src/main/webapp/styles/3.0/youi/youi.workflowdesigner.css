@@ -1,0 +1,82 @@
+@CHARSET "UTF-8";
+
+.youi-workflowdesigner{
+	padding:0px;
+	position:relative;
+	background:rgba(232, 227, 232, 0.1);
+}
+
+.youi-workflowdesigner >.layout-y{
+	padding:0px;
+	min-height:542px;
+	border-bottom:1px solid #F9F9F9;
+	
+	-webkit-box-shadow: 0 0px 12px rgba(244, 236, 250, .175);
+  	box-shadow: 0 0px 12px rgba(244, 236, 250, .175);
+}
+
+.youi-workflowdesigner .youi-flow.comp-flow{
+	width:66.66666667%!important;
+}
+
+.youi-workflowdesigner .youi-toolbar{
+	border-bottom:1px solid #ddd;
+	padding-left: 1px;
+	background:#F9F9F9;
+	
+	-webkit-box-shadow: 5px 0px 0px 0px rgba(244, 236, 250, 1);
+  	box-shadow: 5px 0px 0px 0px rgba(244, 236, 250, 1);
+}
+
+.youi-shell-left{
+	padding:0px;
+}
+
+.youi-workflowdesigner  .comp-flow{
+	border-left:1px solid #F9F9F9;
+	border-right:1px solid #F9F9F9;
+	border-bottom:1px solid #F9F9F9;
+	border-radius: 25px;
+}
+
+.youi-workflowdesigner .comp-tree{
+	padding:5px;
+	overflow:auto;
+}
+
+.youi-workflowdesigner .comp-propertytable{
+}
+
+/***********************  tree *********************/
+.youi-tree li.treeNode.startEvent >span{
+	background-image:url(images/workflow/16/start_event_empty.png);
+}
+
+.youi-tree li.treeNode.userTask >span{
+	background-image:url(images/workflow/16/task_empty.png);
+}
+
+.youi-tree li.treeNode.exclusiveGateway >span{
+	background-image:url(images/workflow/16/gateway_exclusive.png);
+}
+
+.youi-tree li.treeNode.endEvent >span{
+	background-image:url(images/workflow/16/end_event_terminate.png);
+}
+
+.youi-tree li.treeNode.transition >span{
+	background-image:url(images/workflow/16/flow_sequence.png);
+}
+
+.youi-tree li.treeNode.parallelGateway >span{
+	background-image:url(images/workflow/16/gateway_parallel.png);
+}
+
+.youi-tree li.treeNode.serviceTask >span{
+	background-image:url(images/workflow/type.service.png);
+}
+
+.youi-tree li.treeNode.root >span{
+	background-image:url(images/workflow/activiti.logo.gradients.16x16.png);
+}
+

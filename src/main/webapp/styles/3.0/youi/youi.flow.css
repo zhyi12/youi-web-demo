@@ -1,0 +1,262 @@
+@CHARSET "UTF-8";
+.youi-flow{
+	position:relative;
+	overflow:auto;
+	padding:0px!important;
+	
+	
+}
+
+.youi-flow canvas{
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+.youi-flow canvas#canvas_trace{
+	z-index:1;
+}
+
+.youi-flow canvas#canvas_main{
+}
+
+.youi-flow .node{
+	position:absolute;
+	width:80px;
+	height:50px; 
+	line-height:50px; 
+	text-align:center;
+	padding:0px 2px;
+	border:1px solid #ddd;
+	background:#EDF0FF no-repeat 6px 2px;
+	z-index:5;
+	
+	border-radius:10px;
+	white-space: nowrap;
+	overflow:hidden;
+	
+	cursor:point;
+	font-weight:bold;
+	
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.youi-flow .node.startEvent,.youi-flow .node.endEvent{
+	width:50px;
+	height:50px; 
+	border-radius:25px;
+	background:#ECFFB8;
+}
+
+.youi-flow .node.endEvent{
+	background:#E26757;
+}
+
+.youi-flow .node.userTask{
+	background-image:url(images/workflow/type.user.png);
+}
+
+.youi-flow .node.serviceTask{
+	background-image:url(images/workflow/type.service.png);
+}
+
+.youi-flow .node.exclusive{
+	width:50px;
+	height:50px;
+	background-image:url(images/workflow/48/gateway_exclusive.png);
+	background-color:white;
+	background-position: 0px 0px;
+}
+
+.youi-flow .node.parallel{
+	width:50px;
+	height:50px;
+	background-image:url(images/workflow/48/gateway_parallel.png);
+	background-color:white;
+	background-position: 0px 0px;
+}
+
+.youi-flow .transition .point{
+	position:absolute;
+	padding:3px;
+	border-radius:3px;
+	cursor:move;
+	z-index:5;
+}
+
+.youi-flow .transition .point.in-straight-line{
+	display:none;
+}
+
+.youi-flow .transition.ui-click .point.in-straight-line{
+	display:block;
+	background:#ddd;
+}
+
+.youi-flow .transition .point-text{
+	position:absolute;
+	z-index:3;
+}
+
+.youi-flow .node.ui-selected,.youi-flow .node.ui-selecting{
+	color:red;
+	-webkit-box-shadow: 0 6px 12px rgba(194, 145, 234, 1);
+  	box-shadow: 0 6px 12px rgba(194, 145, 234, 1);
+}
+
+.youi-flow .selection-helper{
+	position:absolute;
+	border:1px dotted #ddd;
+	display:none;
+}
+
+.youi-flow .over-panels{
+	position:absolute;
+	z-index:3;
+	display:none;
+}
+
+.youi-flow .over-panels .over-item{
+	background:white;
+	float:right;
+	font-size:0px;
+	color:white;
+	background:url(images/workflow/16/task_empty.png) no-repeat center white;
+	cursor:pointer;
+	padding:13px;
+	display:none;
+}
+
+.youi-flow .over-panels .over-item.over-top,
+.youi-flow .over-panels .over-item.over-center,
+.youi-flow .over-panels .over-item.over-bottom{
+	display:inline;
+}
+
+.youi-flow .over-panels .over-item.over-center{
+	clear:both;
+}
+
+.youi-flow .over-panels .over-item.over-bottom-first{
+	clear:right;
+}
+
+.youi-flow .over-panels .over-item.removeNode{background-image:url(images/workflow/delete.gif);}
+.youi-flow .over-panels .over-item.startSequence{background-image:url(images/workflow/sequence.gif);}
+.youi-flow .over-panels .over-item.parallel{background-image:url(images/workflow/type.gateway.parallel.png);}
+.youi-flow .over-panels .over-item.exclusive{background-image:url(images/workflow/type.gateway.exclusive.png);}
+
+.youi-flow .over-panels .over-item.endEvent{background-image:url(images/workflow/type.endevent.none.png);}
+.youi-flow .over-panels .over-item.serviceTask{background-image:url(images/workflow/type.service.png);}
+.youi-flow .over-panels .over-item.userTask{background-image:url(images/workflow/type.user.png);}
+
+.youi-flow .over-panels .over-item:hover{
+	background-color:#EEDDEE;
+	border-radius:10px;
+}
+
+.youi-flow .selection-helper.selecting{
+	display:block!important;
+	z-index:99;
+}
+
+/**/
+.youi-flow .lane-layout{
+	top:0px;
+	left:0px;
+	display: inline-block;
+	height:500px;
+	position: relative;
+}
+
+.youi-flow .lane{
+	position:relative;
+	float:left;
+	border:1px solid #ddd;
+	width:200px;
+	z-index:3;
+}
+
+.youi-flow .lane .col-resize-handler{
+	width:6px;
+	height:30px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	cursor:col-resize;
+}
+
+.youi-flow .lane:first-child{
+	width:50px;
+	border:1px solid white;
+}
+
+.youi-flow .lane .lane-title{
+	line-height:30px;
+	height:30px;
+	text-align:center;
+	background:#F6F6F7;
+	font-weight:bold;
+	 white-space: nowrap;
+}
+
+.youi-flow .lane:first-child .lane-title{
+	height:0px;
+}
+
+.youi-flow .lane .lane-title.ui-click{
+	color:red;
+	background:#E6F6F7;
+}
+
+.youi-flow .resize-helper{
+	position:absolute;
+	display:none;
+}
+
+.youi-flow .resize-helper.resizing{
+	display:block;
+	border-right:1px dotted #ddd;
+	z-index:99;
+}
+
+.youi-flow .resize-helper.row-resizing{
+	display:block;
+	border-bottom:1px dotted #ddd;
+	z-index:99;
+}
+
+.youi-xmenu .glyphicon.fontawesome-addLane:before{
+	content:"\f055";
+}
+
+.youi-xmenu .glyphicon.fontawesome-alignSelected:before{
+	content:"\e246";
+	font-size:13px;
+}
+
+.youi-xmenu .glyphicon.fontawesome-valignSelected:before{
+	content:"\e248";
+	font-size:13px;
+}
+
+.youi-xmenu .glyphicon.fontawesome-exportImage:before{
+	content: "\f03e";
+}
+
+.youi-xmenu .glyphicon.fontawesome-selectAll:before{
+	content: "\f096";
+	padding:0px 1px;
+}
+
+.row-resize-handler{
+	width:100%;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	cursor:row-resize;
+	font-size:0px;
+	height:5px;
+	z-index:3;
+}

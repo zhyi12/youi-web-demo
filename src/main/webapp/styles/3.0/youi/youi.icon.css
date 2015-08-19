@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+
+.youi-icon{
+	cursor:pointer;
+}
+
+.youi-button .youi-icon{
+	top:2px;
+}
+
+.youi-icon:hover{
+	color:blue;
+}
+
+.youi-icon.glyphicon.copy:before{content:"\e205";}
+
+.youi-icon.glyphicon.edit:before{content:"\e065";}
+.youi-icon.glyphicon.editRecord:before{content: "\e065";}
+
+.youi-icon.glyphicon.remove:before{content: "\e014";}
+.youi-icon.glyphicon.removeRecord:before{content: "\2212";}
+.youi-icon.glyphicon.removeRow:before{content: "\2212";}
+
+.youi-icon.glyphicon.add:before{content: "\2b";}
+.youi-icon.glyphicon.addRecord:before{content: "\2b";}
+.youi-icon.glyphicon.addRow:before{content: "\2b";}
+
+.youi-icon.glyphicon.submit:before{content: "\e084";}
+.youi-icon.glyphicon.reset:before{content: "\e031";}
+.youi-icon.glyphicon.search:before{content: "\e084";}
+
+.youi-icon.glyphicon.close{
+	float: left;
+	font-size: 14px;
+}
+.youi-icon.glyphicon.close:before{content: "\e014";}
+
+
+.youi-icon.glyphicon.checkbox:before{content: "\e157";}
+.selected .youi-icon.glyphicon.checkbox:before,
+.youi-icon.glyphicon.checkbox.selected:before
+{content: "\e067";}
+
+
+.youi-icon.glyphicon.pFirst:before{content: "\e069";}
+.youi-icon.glyphicon.pNext:before{content: "\e080";}
+.youi-icon.glyphicon.pPrev:before{content: "\e079";}
+.youi-icon.glyphicon.pLast:before{content: "\e077";}
+
+.youi-icon.glyphicon.pReload:before{content: "\e031";}
+.youi-icon.glyphicon.refresh:before{content: "\e031";}
+
+.youi-icon.glyphicon.moveRight:before{content: "\e080";}
+.youi-icon.glyphicon.moveRightAll:before{content: "\e075";}
+.youi-icon.glyphicon.moveLeft:before{content: "\e079";}
+.youi-icon.glyphicon.moveLeftAll:before{content: "\e071";}
+
+.youi-icon.glyphicon.view:before{content: "\e066";}

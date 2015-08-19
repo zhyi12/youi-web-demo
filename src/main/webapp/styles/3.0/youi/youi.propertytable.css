@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+.youi-propertytable{
+	overflow:hidden;
+	position:relative;
+}
+
+.youi-propertytable .propertytable-header{
+	padding:0px;
+	text-align:center;
+	font-weight:bold;
+	background: #F9F9F9;
+	z-index:1;
+}
+
+.youi-propertytable .propertytable-body{
+	overflow:hidden;
+	padding:0px;
+}
+
+.youi-propertytable .propertytable-group,
+.youi-propertytable .propertytable-row{
+	display:none;
+}
+
+.youi-propertytable .propertytable-name,
+.youi-propertytable .propertytable-value{
+	border:1px solid #ddd;
+	margin-top:-1px;
+	line-height:28px;
+	overflow:hidden;
+	height:30px;
+}
+
+.youi-propertytable .propertytable-name{
+	background: #F9F9F9;
+	padding:0px 5px;
+}
+.youi-propertytable .propertytable-value{
+	margin-left:-1px;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.youi-propertytable .propertytable-body .propertytable-value{
+	background:#fffeff;
+}
+.youi-propertytable .propertytable-group{
+	padding:0px;
+}
+.youi-propertytable .propertytable-group .group-label{
+	text-align:left;
+	padding-left:0px;
+	padding-right:1px;
+	line-height:26px;
+	font-weight:bold;
+	margin-top:-1px;
+}
+
+.youi-propertytable .propertytable-group .group-label .group-title{
+	border:1px solid #ddd;
+	padding-left:5px;
+	background: rgba(208, 208, 206, 0.06);
+}
+
+.youi-propertytable .propertytable-value{
+	
+}
