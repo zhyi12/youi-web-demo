@@ -1773,7 +1773,7 @@
 				nodeId2 = nodeElement2.attr('id'),
 				lineId = nodeId1+'_'+nodeId2;
 			
-			if(nodeId1===nodeId2||this..finelementd('.transition[data-source-ref='+nodeId1+'][data-target-ref='+nodeId2+']').length){
+			if(nodeId1===nodeId2||this.element.find('.transition[data-source-ref='+nodeId1+'][data-target-ref='+nodeId2+']').length){
 				return null;
 			}
 			
