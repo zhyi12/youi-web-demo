@@ -43,12 +43,15 @@
 			
 			this.options.propertytableOptions = {
 				propertyConverts:{},
+				change:function(event,ui){
+					that._propertyChange(event,ui);
+				},
 				propertyGroupDescs:{
 					'base':{
 						caption:'基本属性',
 						propertyDescs:[
-						     {name:'id',caption:'id',groups:['base']},
-						     {name:'text',caption:'名称',groups:['base']}
+						     {name:'id',caption:'id',type:'fieldHidden',groups:['base']},
+						     {name:'caption',caption:'名称',groups:['base']}
 						]
 					},'node':{
 						caption:'节点属性',
@@ -74,6 +77,20 @@
 			if(this.leftTreeElement){
 				this.leftTreeElement.find('>ul').html(treeNode.toTreeHtml(true));
 			}
+		},
+		/**
+		 * 执行模型文本变化关联动作
+		 */
+		_updateByModelText:function(id,text){
+			this.leftTreeElement.find('li#'+id+' >span>a').text(text);
+			//
+			this.editorWidget[this.options.contentWidget]('select',id);
+		},
+		/**
+		 * 属性变化
+		 */
+		_propertyChange:function(event,options){
+			this.editorWidget[this.options.contentWidget]('propertyChange',options);
 		},
 		/**
 		 * 
@@ -103,8 +120,8 @@
 			return {
 				initHtml:this.options.initHtml,
 				bindResize:true,
-				afterSetNodeText:function(event,text){//设置节点文本
-					
+				afterTextChange:function(event,ui){//设置节点文本
+					that._updateByModelText(ui.id,ui.text);
 				},
 				afterModelsChange:function(event,treeData){//设置节点文本
 					that._refreshModelTree(treeData);
@@ -112,10 +129,11 @@
 				
 				elementClick:function(event,ui){
 					var id = ui.target.getAttribute('id');
+					if(!id)return;
 					//选择模型
 					that._selectModel(id,$.extend({},$(ui.target).data(),{
 						id:id,
-						text:$.trim($(ui.target).text())
+						caption:$.trim($(ui.target).text())
 					}),ui.target.className.split(' '));
 				},
 				overpanels:[
@@ -123,8 +141,8 @@
 					{name:'addRefNode',subname:'serviceTask',groups:['node'],excludes:['endEvent'],caption:'添加服务节点'},
 					{name:'addRefNode',subname:'userTask',groups:['node'],excludes:['endEvent'],caption:'添加UserTask节点'},
 					
-					{name:'addRefNode',subname:'exclusive',groups:['node'],excludes:['endEvent'],caption:'增加分支节点'},
-					{name:'addRefNode',subname:'parallel',groups:['node'],excludes:['endEvent'],caption:'增加合并节点'},
+					{name:'addRefNode',subname:'exclusiveGateway',groups:['node'],excludes:['endEvent'],caption:'增加分支节点'},
+					{name:'addRefNode',subname:'parallelGateway',groups:['node'],excludes:['endEvent'],caption:'增加合并节点'},
 
 					{name:'removeNode',groups:['node'],excludes:['startEvent'],caption:'删除'},
 					{name:'startSequence',groups:['node'],excludes:['endEvent'],caption:'添加End节点'}
@@ -154,7 +172,9 @@
 		 * 保存工作流
 		 */
 		save:function(){
-			alert('save you workflow.');
+			var xml = this.editorWidget[this.options.contentWidget]('getXml');
+			
+			alert(xml);
 		},
 		
 		/**

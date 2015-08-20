@@ -18,8 +18,8 @@
 		_startNodeStyle='startEvent',
 		_endNodeStyle='endEvent',
 		_pointRadius = 3,//拐点半径
-		_overpanelTopHeight = 28,//上高
-		_overpanelRightWidth = 27;//右宽
+		_overpanelTopHeight = 28,//浮动面板上高
+		_overpanelRightWidth = 27;//浮动面板右宽
 	
 	/**
 	 * 添加统一的右键菜单
@@ -144,7 +144,7 @@
 						this.undo();
 					}else if(event.ctrlKey&&event.keyCode==89){//ctrl+y
 						this.redo();
-					}else if(event.keyCode==$.ui.keyCode.DELETE){//ctrl+z
+					}else if(event.ctrlKey&&event.keyCode==68){//ctrl+D
 						this._doRemove();
 					}else if(event.keyCode==$.ui.keyCode.UP){
 						this._keyMove(0,-1);
@@ -287,6 +287,8 @@
 				refTransitions.remove();
 			}
 			this._refreshTransitions();
+			
+			this._afterModelsChange();//模型变化
 		},
 		
 		doRemoveSelectedUndo:function(context,element,refTransitions){
@@ -297,14 +299,20 @@
 			}
 			
 			this._refreshTransitions();
+			
+			this._afterModelsChange();//模型变化
 		},
 		
 		doSetNodeText:function(context,nodeElement,text,oldText){
 			nodeElement.text(text);
+			
+			this._afterTextChange(nodeElement,text);//文本变化
 		},
 		
 		doSetNodeTextUndo:function(context,nodeElement,text,oldText){
 			nodeElement.text(oldText);
+			
+			this._afterTextChange(nodeElement,oldText);//文本变化
 		},
 		
 		/**
@@ -372,6 +380,8 @@
 		doAddTransition:function(context,transitionElement){
 			this.element.append(transitionElement);
 			this._refreshTransitions();
+			
+			this._afterModelsChange();//模型变化
 		},
 		/**
 		 * 
@@ -379,18 +389,24 @@
 		doAddTransitionUndo:function(context,transitionElement){
 			transitionElement.remove();
 			this._refreshTransitions();
+			
+			this._afterModelsChange();//模型变化
 		},
 		/**
 		 * 添加节点
 		 */
 		doAddNode:function(context,nodeElement){
 			this.element.append(nodeElement);
+			
+			this._afterModelsChange();//模型变化
 		},
 		/**
 		 * 撤销添加节点
 		 */
 		doAddNodeUndo:function(context,nodeElement){
 			nodeElement.remove();
+			
+			this._afterModelsChange();//模型变化
 		},
 		
 		doAddLane:function(context,laneElement,prevLaneElement){
@@ -702,7 +718,113 @@
 				this._clickElement(element, null);
 			}
 		},
+		/**
+		 * 节点属性变化
+		 */
+		propertyChange:function(options){
+			var property = options.property,
+				value = options.value,
+				element = this.element.find('.ui-click');
+			if(property&&element.length){
+				_log.debug('set '+options.property+' = '+options.value);
+				
+				//_textPropertyChange
+				var customfuncName = '_'+options.property+'PropertyChange';
+				if($.isFunction(this[customfuncName])){
+					this[customfuncName](element,options.value,options.text);
+				}else{
+					element.data(options.property,options.value);
+				}
+			}
+		},
+		/**
+		 * 获取xml
+		 */
+		getXml:function(){
+			var xmls = ['<?xml version="1.0" encoding="UTF-8"?>'],
+				skipProps = ['id','key'];
+			
+			xmls.push('<flow>');
+			
+			this.element.find('.node').each(function(){
+				var elem = $(this),
+					datas = elem.data();
+				xmls.push('<node id="'+elem.attr('id')+' ');
+				
+				for(var property in datas){
+					if($.inArray(property,skipProps)!=-1){
+						continue;
+					}
+					var propertySplit = property.split(":");
+					if(propertySplit.length>1){
+						xmls.push(propertySplit[1]+'="'+datas[property]+'" ');
+					}else{
+						xmls.push(property+'="'+datas[property]+'" ');
+					}
+				}
+				
+				xmls.push(' left="'+this.offsetLeft+'" ');
+				xmls.push(' top="'+this.offsetTop+'" ');
+				xmls.push(' width="'+(this.offsetWidth-2)+'" ');
+				xmls.push(' height="'+(this.offsetHeight-2)+'" ');
+				
+				xmls.push('">');
+				xmls.push(elem.text());
+				xmls.push('</node>');
+			});
+			
+			this.element.find('.transition').each(function(){
+				var thisElement = $(this),
+					from =thisElement.data('sourceRef'),
+					to = thisElement.data('targetRef'),
+					id = this.getAttribute('id');
+				xmls.push('<transition id="'+id+'" ');
+				xmls.push(' from="'+from+'" ');
+				xmls.push(' to="'+to+'" ');
+				xmls.push(' caption="'+$.trim(thisElement.text()||thisElement.attr('title')||'')+'" ');
+				//xmls.push(' expression="'+(thisElement.attr('expression')||getDataProperty(thisElement,'expression')||'')+'" ');
+				xmls.push('>');
+				
+				if(thisElement.data('expression')){
+					xmls.push('<![CDATA['+(thisElement.data('expression')+']]>'));
+				}
+				
+				//保存拐点
+				$('.point',this).each(function(){
+					xmls.push('<point ');
+					xmls.push(' left="'+this.offsetLeft+'" ');
+					xmls.push(' top="'+this.offsetTop+'" ');
+					xmls.push('/>');
+				});
+				
+				xmls.push('</transition>');
+			});
+			
+			xmls.push('</flow>');
+			
+			return xmls.join('');
+		},
+		/**
+		 * 属性变化
+		 */
+		_captionPropertyChange:function(element,value,text){
+			if(element.is('.node')){
+				this.executeCommand('doSetNodeText',element,value,element.text());
+			}else if(element.is('.transition')){
+				//
+				var textElement = element.find('>.point-text');
+				if(textElement.length==0){
+					textElement = $('<div class="point-text content-editable" data-radius="0" data-degree="0"></div>').appendTo(element);
+					this._refreshTransitions();
+				}
+				
+				this.executeCommand('doSetNodeText',textElement,value,textElement.text());
+			}
+		},
 		
+//		_expressionPropertyChange:function(element,value,text){
+//			
+//		},
 		/**
 		 * 
 		 */
@@ -826,6 +948,18 @@
 		_afterModelsChange:function(event){
 			//
 			this._trigger('afterModelsChange',event,this._buildTreeData());
+		},
+		
+		_afterTextChange:function(nodeElement,text){
+			var id = nodeElement.attr('id');
+			
+			if(nodeElement.is('.point-text')){
+				id = nodeElement.parent('.transition').attr('id');
+			}
+			
+			if(id){
+				this._trigger('afterTextChange',null,{id:id,text:text});
+			}
 		},
 		
 		_buildTreeData:function(){

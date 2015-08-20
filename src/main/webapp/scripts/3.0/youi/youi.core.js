@@ -12,41 +12,6 @@
 	$.youi = $.youi||{};//初始化组件空间
 	
 	/**
-	 * 组件扩展机制
-	 * 实现组件的自由扩展功能，热插拔组件的一些功能。
-	 * 比如grid组件的编辑功能，排序功能，拖动等功能。
-	 */
-	$.youi.extensions = {};
-	
-	/**
-	 * 组件扩展抽象接口
-	 */
-	$.youi.abstractExtension = {
-		/**
-		 * 
-		 */
-		order:0,//扩展执行顺序
-		/**
-		 * 组件创建前
-		 */
-		beforeCreate:function(){
-			
-		},
-		/**
-		 * 组件创建后
-		 */
-		afterCreate:function(){
-			
-		},
-		/**
-		 * 事件代理
-		 */
-		actionDelegate:function(){
-			
-		}
-	};
-	
-	/**
 	 * $.youi.getMessage(source,params)
 	 * 国际化配置信息解析工具类
 	 */

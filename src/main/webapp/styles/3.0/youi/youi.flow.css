@@ -61,7 +61,7 @@
 	background-image:url(images/workflow/type.service.png);
 }
 
-.youi-flow .node.exclusive{
+.youi-flow .node.exclusiveGateway{
 	width:50px;
 	height:50px;
 	background-image:url(images/workflow/48/gateway_exclusive.png);
@@ -69,7 +69,7 @@
 	background-position: 0px 0px;
 }
 
-.youi-flow .node.parallel{
+.youi-flow .node.parallelGateway{
 	width:50px;
 	height:50px;
 	background-image:url(images/workflow/48/gateway_parallel.png);
@@ -97,6 +97,7 @@
 .youi-flow .transition .point-text{
 	position:absolute;
 	z-index:3;
+	padding:2px 3px;
 }
 
 .youi-flow .node.ui-selected,.youi-flow .node.ui-selecting{
@@ -144,8 +145,8 @@
 
 .youi-flow .over-panels .over-item.removeNode{background-image:url(images/workflow/delete.gif);}
 .youi-flow .over-panels .over-item.startSequence{background-image:url(images/workflow/sequence.gif);}
-.youi-flow .over-panels .over-item.parallel{background-image:url(images/workflow/type.gateway.parallel.png);}
-.youi-flow .over-panels .over-item.exclusive{background-image:url(images/workflow/type.gateway.exclusive.png);}
+.youi-flow .over-panels .over-item.parallelGateway{background-image:url(images/workflow/type.gateway.parallel.png);}
+.youi-flow .over-panels .over-item.exclusiveGateway{background-image:url(images/workflow/type.gateway.exclusive.png);}
 
 .youi-flow .over-panels .over-item.endEvent{background-image:url(images/workflow/type.endevent.none.png);}
 .youi-flow .over-panels .over-item.serviceTask{background-image:url(images/workflow/type.service.png);}
