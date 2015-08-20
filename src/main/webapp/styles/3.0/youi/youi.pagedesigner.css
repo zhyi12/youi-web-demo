@@ -1,0 +1,169 @@
+@CHARSET "UTF-8";
+
+
+.youi-pagedesigner{
+	padding:0px;
+}
+
+.youi-pagedesigner .comp-toolbar{
+	border-top:1px solid #ddd;
+}
+
+.pagedesigner-comp{
+	padding:2px;
+	margin-bottom: 0px;
+	border-left:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	position:relative;
+}
+
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.panel{
+	background-image:url(images/pagedesigner/panel.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.div,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.div{
+	background-image:url(images/pagedesigner/div.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.grid,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.grid{
+	background-image:url(images/pagedesigner/grid.gif);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.gridCol,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.gridCol{
+	background-image:url(images/pagedesigner/grid-col.gif);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.tree,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.tree{
+	background-image:url(images/pagedesigner/tree.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.treeNode,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.treeNode{
+	background-image:url(images/pagedesigner/tree-node.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.form,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.form{
+	background-image:url(images/pagedesigner/form.gif);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldText,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldText{
+	background-image:url(images/pagedesigner/field-text.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldSelect,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldSelect{
+	background-image:url(images/pagedesigner/field-select.gif);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldCalendar,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldCalendar{
+	background-image:url(images/pagedesigner/field-date.gif);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldLabel,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldLabel{
+	background-image:url(images/pagedesigner/field-label.gif);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldPassword,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldPassword{
+	background-image:url(images/pagedesigner/field-password.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldRadioGroup,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldRadioGroup{
+	background-image:url(images/pagedesigner/field-radio-group.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldCheckboxGroup,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldCheckboxGroup{
+	background-image:url(images/pagedesigner/field-checkbox.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldGrid,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldGrid{
+	background-image:url(images/pagedesigner/grid.gif);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldTree,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldTree{
+	background-image:url(images/pagedesigner/tree.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldHidden,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldHidden{
+	background-image:url(images/pagedesigner/field-hidden.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldArea,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldArea{
+	background-image:url(images/pagedesigner/field-textarea.gif);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldMultiupload,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldMultiupload{
+	background-image:url(images/pagedesigner/field-upload.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldSwfupload,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldSwfupload{
+	background-image:url(images/pagedesigner/field-swfupload.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldForm,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldForm{
+	background-image:url(images/pagedesigner/field-form.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldLayout,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldLayout{
+	background-image:url(images/pagedesigner/field-layout.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.fieldOption,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.fieldOption{
+	background-image:url(images/pagedesigner/field-option.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.buttons,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.buttons{
+	background-image:url(images/pagedesigner/buttons.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.button,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.button{
+	background-image:url(images/pagedesigner/button.gif);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.tabs,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.tabs{
+	background-image:url(images/pagedesigner/tabs.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.tabItem,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.tabItem{
+	background-image:url(images/pagedesigner/tab-item.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.subpage,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.subpage{
+	background-image:url(images/pagedesigner/subpage.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.dialog,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.dialog{
+	background-image:url(images/pagedesigner/dialog.png);
+}
+
+.youi-pagedesigner .youi-tree ul li.treeNode span.func,
+.youi-pagedesigner .youi-accordion .accordion-item .youi-icon.func{
+	background-image:url(images/pagedesigner/func.png);
+	background-position-x:-4px;
+}
+

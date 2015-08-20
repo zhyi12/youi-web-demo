@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+.youi-accordion{
+	position:relative;
+}
+
+.youi-accordion .accordion-tree{
+	border-top:1px solid silver;
+	padding-top:5px;
+	margin-top:5px;
+}
+
+.youi-accordion .panel-default > .panel-heading{
+	padding-top:6px;
+	padding-bottom:6px;
+}
+
+.youi-accordion .panel-body{
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+.youi-accordion .panel-default > .panel-heading .panel-title a{
+	padding-right:20%;
+}
+
+.youi-accordion .panel-body{
+	padding:5px;
+}
+
+.youi-accordion .accordion-item{
+	padding:3px;
+	cursor:move;
+}
+
+.youi-accordion .accordion-item .youi-icon{
+	padding:17px 12px 7px 12px;
+	font-size:0px;
+	background:no-repeat center center;
+}
+
+.drop-helper .accordion-item{
+	padding:2px;
+	width:100px;
+}
+
+
+.youi-accordion .accordion-item:hover{
+	background:#efeffe;
+}

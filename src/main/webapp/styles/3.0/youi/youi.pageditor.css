@@ -1,0 +1,230 @@
+@CHARSET "UTF-8";
+.youi-pageditor{
+	position:relative;
+	background:white;
+	
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+.youi-pageditor :focus {
+	outline: -webkit-focus-ring-color auto 0px;
+}
+
+.youi-pageditor .focus-helper{
+	position:absolute;
+	left:-10px;
+	top:-10px;
+	z-index:-1;
+	font-size:1px;
+	height:1px;
+}
+
+.youi-pageditor.droping{
+	background:#F9F9FF;
+}
+
+/*页面布局样式*/
+.youi-pageditor .page-layout{
+	border:1px solid white;
+	min-height:200px;
+}
+
+.youi-pageditor .droping{
+	border:1px dashed silver;
+	background:#F9F9FF;
+}
+
+.youi-pageditor .page-widget{
+	border:1px dashed silver;
+	padding:5px;
+}
+
+.youi-pageditor .page-widget.nopadding,
+.youi-pageditor .page-widget.nopadding.selected{
+	padding:0px 5px;
+	border:none;
+}
+
+.youi-pageditor .page-widget.selected{
+	border:1px solid blue;
+	z-index:1;
+}
+
+.youi-pageditor .page-widget .panel-title a{
+	line-height:20px;
+}
+
+.youi-pageditor .pageditor-drop{
+	padding:10px;
+	border:1px dashed silver;
+}
+
+.youi-pageditor .grid-col{
+	text-align:center;
+	min-height:200px;
+	padding:5px 0px 0px 0px;
+	background:url(images/pagedesigner/header-bg.gif) repeat-x -300px 0px;
+}
+
+.youi-pageditor .grid-col .col-resize-helper{
+	width:5px;
+	top:0px;
+	right:0px;
+	min-height:200px;
+	position:absolute;
+}
+
+.youi-pageditor .grid-col .col-resize-helper:hover{
+	cursor:col-resize;
+	border-right:1px dotted black;
+}
+
+.youi-pageditor .grid-col .col-resize-helper.moving{
+	width:100%;
+}
+
+.youi-pageditor .text-editor,
+.youi-pageditor .field-label-editor{
+	padding:2px 5px;
+}
+
+.youi-pageditor .btn-sm, .btn-group-sm > .btn{
+	padding:4px 10px;
+}
+
+/******************grid组件*********************/
+.youi-pageditor .widget-grid .grid-toolbar,
+.youi-pageditor .widget-grid .grid-footer{
+	padding:0;
+}
+
+.youi-pageditor .widget-grid .grid-content{
+	padding:10px 0px;
+}
+
+/*接收field组件的面板*/
+.youi-pageditor .youi-fieldLayout .field-group{
+	padding-top: 2px;
+	padding-bottom: 2px;
+	min-height: 48px;
+}
+
+.youi-pageditor .youi-fieldLayout .field-content{
+	
+}
+
+.youi-pageditor .youi-fieldLayout .field-content .page-widget{
+	padding:3px;
+}
+
+.youi-pageditor .youi-fieldLayout .field-content .page-widget .glyphicon{
+	top:2px;
+}
+
+.youi-pageditor .youi-fieldLayout .field-label{
+	top:10px;
+}
+
+/*按钮容器*/
+
+.youi-pageditor .button-drop{
+	height:30px;
+	padding:0px 10px;
+}
+
+/*树*/
+.youi-pageditor  .treeNode.page-widget{
+	padding:0px 0px 0px 16px;
+	border:none;
+}
+.youi-pageditor  .treeNode.page-widget.selected>span>a{
+	border-bottom:1px solid blue;
+	color:blue;
+}
+
+/*标签页*/
+.youi-pageditor  .tab-pane{
+	min-height:360px;
+}
+
+.youi-pageditor .youi-tabs li.page-widget,
+.youi-pageditor .youi-tabs li.page-widget.selected{
+	padding:0px;
+}
+
+
+/*checkboxGroup*/
+.youi-pageditor .youi-fieldLayout .field-content .page-widget.option-item{
+	line-height:29px;
+}
+
+.youi-pageditor .widget-fieldCheckboxGroup .youi-icon.option-icon:before{
+	content:"\e157";
+}
+
+.youi-pageditor .widget-fieldRadioGroup .youi-icon.option-icon{
+	border: 3px solid black;
+	padding: 4px;
+	border-radius: 10px;
+	top: 2px;
+}
+
+/**subpage*/
+.youi-pageditor  .widget-subpage.page-widget{
+	margin:2px;
+	border-radius:5px;
+}
+
+/*func**/
+.youi-pageditor .page-widget.widget-func{
+	padding:0px;
+	margin:2px;
+	background-color:#f7f7f7;
+	border-radius:5px;
+}
+.youi-pageditor .page-widget.widget-func .CodeMirror{
+	margin-left:-12px;
+}
+
+.youi-pageditor .page-widget.widget-func textarea{
+	border:none;
+}
+.youi-pageditor .page-widget.widget-func .youi-icon{
+	top:2px;
+	font-size:1px;
+}
+
+.youi-pageditor .page-widget.widget-func  .func-start{
+	float:left;
+	padding-left:5px;
+}
+
+.youi-pageditor .page-widget.widget-func  .func-end{
+	float: left;
+	padding-left: 17px;
+	padding-right: 6px;
+}
+
+.youi-pageditor .page-widget.widget-func  .func-comment .func-comment-text{
+	padding-left:8px;
+}
+
+.youi-pageditor .page-widget.widget-func  .func-content{
+	clear:both;
+	display:none;
+	padding-left:12px;
+}
+
+.youi-pageditor .page-widget.widget-func.expanded  .func-content{
+	display:block;
+}
+
+.youi-pageditor .page-widget.widget-func  .func-start b>:first-child:not(.youi-icon){
+	display:none;
+}
+
+/*******span text******/
+.youi-pageditor .page-widget.widget-span{
+	width:initial;
+}

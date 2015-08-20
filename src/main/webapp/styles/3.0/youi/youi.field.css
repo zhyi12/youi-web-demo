@@ -1,0 +1,313 @@
+@CHARSET "UTF-8";
+
+.youi-fieldLayout{
+	padding-top:5px;
+}
+
+.youi-fieldLayout .field-content{
+	padding-left:0px;
+	padding-right:0px;
+}
+
+.youi-fieldLayout .control-label {
+	padding-left:2px;
+	padding-right:2px;
+}
+
+.youi-fieldLayout .col-sm-10 .sp-preview{
+	width:336px;
+}
+
+.youi-fieldLayout .field-group{
+	padding-left:100px;
+	padding-right:15px;
+	margin-bottom:3px;
+}
+
+.youi-fieldLayout .field-label{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100px;
+	line-height: 26px;
+	text-align: right;
+	padding: 2px 2px 2px 5px!important;
+	overflow:hidden;
+	word-wrap:break-word;
+	overflow-wrap:break-word;
+	white-space:nowrap;
+}
+
+.youi-fieldLayout .field-group.notNull .field-label{
+	color:red;
+}
+.youi-fieldLayout .field-group.label-0{padding-left:0px;}
+.youi-fieldLayout .field-group.label-80{padding-left:80px;}
+.youi-fieldLayout .field-group.label-90{padding-left:90px;}
+.youi-fieldLayout .field-group.label-100{padding-left:100px;}
+.youi-fieldLayout .field-group.label-110{padding-left:110px;}
+.youi-fieldLayout .field-group.label-120{padding-left:120px;}
+.youi-fieldLayout .field-group.label-130{padding-left:130px;}
+.youi-fieldLayout .field-group.label-140{padding-left:140px;}
+.youi-fieldLayout .field-group.label-150{padding-left:150px;}
+.youi-fieldLayout .field-group.label-160{padding-left:160px;}
+.youi-fieldLayout .field-group.label-170{padding-left:170px;}
+.youi-fieldLayout .field-group.label-180{padding-left:180px;}
+.youi-fieldLayout .field-group.label-190{padding-left:190px;}
+.youi-fieldLayout .field-group.label-200{padding-left:200px;}
+
+.youi-fieldLayout .field-group.label-0 .field-label{display:none;}
+.youi-fieldLayout .field-group.label-80 .field-label{width:80px;}
+.youi-fieldLayout .field-group.label-90 .field-label{width:90px;}
+.youi-fieldLayout .field-group.label-100 .field-label{width:100px;}
+.youi-fieldLayout .field-group.label-110 .field-label{width:110px;}
+.youi-fieldLayout .field-group.label-120 .field-label{width:120px;}
+.youi-fieldLayout .field-group.label-130 .field-label{width:130px;}
+.youi-fieldLayout .field-group.label-140 .field-label{width:140px;}
+.youi-fieldLayout .field-group.label-150 .field-label{width:150px;}
+.youi-fieldLayout .field-group.label-160 .field-label{width:160px;}
+.youi-fieldLayout .field-group.label-170 .field-label{width:170px;}
+.youi-fieldLayout .field-group.label-180 .field-label{width:180px;}
+.youi-fieldLayout .field-group.label-190 .field-label{width:190px;}
+.youi-fieldLayout .field-group.label-200 .field-label{width:200px;}
+
+.youi-fieldLayout .youi-field{
+	padding-left:2px;
+}
+
+.youi-fieldLayout .youi-field .form-control{
+	height:30px;
+	padding:4px;
+}
+
+.youi-fieldLayout .youi-field textarea.form-control{
+	min-height:100px;
+}
+
+
+.field-items-panel {
+	position: absolute;
+	background: #fff;
+	display: none;
+	border: 1px solid silver;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 8000;
+	left: 0;
+	top: 0
+}
+
+.youi-editor-container .field-items-panel {
+	position:static;
+	width:100%;
+	margin-top:-2px;
+	min-height:36px;
+}
+
+.youi-editor-container .form-control{
+	padding-left:0px;
+}
+
+div.field-items-panel.expanded {
+	display: block
+}
+
+.field-items-panel.item-srcoll {
+	height: 200px;
+	overflow-y: auto
+}
+
+.field-items-panel .option-item {
+	padding: 2px;
+	cursor: pointer;
+	height: 28px;
+	white-space: nowrap;
+}
+
+.field-items-panel .option-item.over,.field-items-panel .option-item:hover{
+	background-color: #edf;
+}
+
+.field-items-panel .option-item.selected {
+	background-color: #d7e9f9;
+}
+/*fieldSelect*/
+
+
+/*fieldGrid*/
+
+.youi-field.fieldGrid .tree-container,
+.youi-field.fieldGrid .source-selector,
+.youi-field.fieldGrid .grid-container{
+	border:1px solid silver;
+}
+
+.youi-field.fieldGrid .source-selector .command{
+	margin-bottom: 10px;
+	padding: 5px 0px;
+	border:1pt solid silver;
+}
+
+
+/**********fieldTree**********/
+
+.field-tree-container{
+	overflow-y:auto;
+	overflow-x:hidden;
+	padding:5px;
+}
+
+/**********fieldCheckbox**********/
+.youi-field.fieldCheckboxGroup .checkbox-item{
+	line-height:30px;
+	padding-right:5px;
+}
+.youi-field.fieldCheckboxGroup .checkbox-item input[type="checkbox"]{
+	margin-top:0px;
+	vertical-align:middle;
+}
+
+/**********field.fieldCron**********/
+
+.youi-form .youi-fieldLayout .youi-field.fieldCron{
+  border-radius: 10px;
+  border: 1px solid silver;
+  padding: 5px;
+}
+
+.youi-field.fieldCron table.cronTable {
+	background: silver;
+	width:100%;
+	margin: 2px 0;
+	border-left:1px solid silver;
+	border-right:1px solid silver;
+}
+
+.youi-field.fieldCron table.cronTable tr{
+	border-top:1px solid silver;
+}
+
+.youi-field.fieldCron table.cronTable td {
+	background: white;
+	padding:1px;
+	height:32px;
+}
+
+.youi-field.fieldCron table.cronTable td.label {
+	text-align: right;
+	font-weight: bold;
+	display: table-cell;
+	color:black;
+	vertical-align: middle;
+  	border-radius: 0em;
+  	border-right:1px solid silver;
+}
+
+.youi-field.fieldCron table.cronTable td.modePanel {
+	display: none;
+	width: 300px
+}
+
+.youi-field.fieldCron table.cronTable td.modePanel.show {
+	display: table-cell!important;
+}
+
+.youi-field.fieldCron .cronLabel {
+	padding: 0 2px;
+	height: 28px;
+	width: 30px;
+	background: #eeffe9;
+	text-align: center
+}
+
+.youi-field.fieldCron .cron-expression {
+	border: 1px solid silver
+}
+
+.youi-field.fieldCron input.mode-value{
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.youi-field.fieldSwfupload .close,
+.youi-field.fieldMultiupload .close{
+	top:3px;
+	color:red;
+}
+
+.youi-field.fieldSwfupload .field-swfupload-files,
+.youi-field.fieldMultiupload .field-upload-files{
+	overflow-y: auto;
+	background: white;
+	border-radius: 10px 10px 0px 0px;
+	padding: 5px;
+}
+
+.youi-field.fieldSwfupload .field-swfupload-files .ui-widget-content,
+.youi-field.fieldMultiupload .field-upload-files .ui-widget-content{
+	border-bottom:1px dotted silver;
+	padding: 2px;
+}
+
+.youi-field.fieldSwfupload .field-swfupload-files .percentage-container,
+.youi-field.fieldMultiupload .field-upload-files .percentage-container{
+	float:right;
+}
+
+.youi-field.fieldSwfupload .field-swfupload-btn,
+.youi-field.fieldMultiupload .field-upload-btn{
+	background: white;
+}
+
+.youi-field.fieldSwfupload .value{
+	padding-left:5px;
+}
+
+
+.youi-field.fieldMultiupload  .file-upload-helper{
+	display:none;
+}
+
+.youi-field.fieldAutocomplete{
+
+}
+
+.ui-autocomplete.ui-widget-content{
+	border:1px solid silver;
+	background:white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+}
+
+.ui-autocomplete.ui-menu .ui-menu-item{
+	padding:2px;
+}
+.ui-autocomplete.ui-menu .ui-menu-item:hover{
+	background:#eeddff;
+	cursor:pointer;
+}
+/**fieldSpinner**/
+.youi-field.fieldSpinner .youi-spinner-toggle{
+	padding:0px 5px;
+	font-size:10px;
+}
+
+.youi-field.fieldSpinner .youi-spinner-toggle .glyphicon{
+	color:silver;
+	cursor:pointer;
+}
+
+.youi-field.fieldSpinner .youi-spinner-toggle .glyphicon:hover{
+	color:black;
+}
